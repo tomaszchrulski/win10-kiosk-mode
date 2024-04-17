@@ -2,7 +2,7 @@ $assignedAccessConfiguration = @"
 <?xml version="1.0" encoding="utf-8"?>
 <AssignedAccessConfiguration xmlns="http://schemas.microsoft.com/AssignedAccess/2017/config" xmlns:rs5="http://schemas.microsoft.com/AssignedAccess/201810/config" xmlns:v3="http://schemas.microsoft.com/AssignedAccess/2020/config">
   <Profiles>
-    <Profile Id="{9A2A490F-10F6-4764-974A-43B19E722C24}">
+    <Profile Id="{9A2A490F-10F6-4764-974A-43B19E722C25}">
       <AllAppsList>
         <AllowedApps>
           <App AppUserModelId="Microsoft.WindowsCalculator_8wekyb3d8bbwe!App" />
@@ -68,6 +68,15 @@ $assignedAccessConfiguration = @"
                                 <start:DesktopApplicationTile Size="2x2" Column="4" Row="2" DesktopApplicationID="{1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\mspaint.exe"/>
                                 <start:Tile Size="2x2" Column="6" Row="2" AppUserModelID="microsoft.windowscommunicationsapps_8wekyb3d8bbwe!microsoft.windowslive.calendar"/>
                             </start:Group>
+							<start:Group>
+							    <start:DesktopApplicationTile Size="2x2" Column="4" Row="2" DesktopApplicationID="https://ancestrylibrary.com.au/"/>
+                                <start:DesktopApplicationTile Size="2x2" Column="4" Row="0" DesktopApplicationID="https://my.gov.au/"/>
+                                <start:DesktopApplicationTile Size="2x2" Column="6" Row="0" DesktopApplicationID="https://readingeggs.com.au/"/>
+                                <start:DesktopApplicationTile Size="2x2" Column="2" Row="0" DesktopApplicationID="https://earth.google.com/"/>
+                                <start:DesktopApplicationTile Size="2x2" Column="0" Row="0" DesktopApplicationID="https://mathletics.com/au/"/>
+                                <start:DesktopApplicationTile Size="2x2" Column="2" Row="2" DesktopApplicationID="https://trove.nla.gov.au/"/>
+                                <start:DesktopApplicationTile Size="2x2" Column="0" Row="2" DesktopApplicationID="https://slwa.wa.gov.au/"/>
+							</start:Group>
                             </defaultlayout:StartLayout>
                         </StartLayoutCollection>
                         </DefaultLayoutOverride>
@@ -78,8 +87,8 @@ $assignedAccessConfiguration = @"
   </Profiles>
   <Configs>
     <Config>
-      <AutoLogonAccount rs5:DisplayName="MS Learn Example test" />
-      <DefaultProfile Id="{9A2A490F-10F6-4764-974A-43B19E722C24}" />
+      <AutoLogonAccount rs5:DisplayName="MS Learn Example test2" />
+      <DefaultProfile Id="{9A2A490F-10F6-4764-974A-43B19E722C25}" />
     </Config>
   </Configs>
 </AssignedAccessConfiguration>
