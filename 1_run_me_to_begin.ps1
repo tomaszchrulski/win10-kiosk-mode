@@ -2,8 +2,8 @@
 
 $downloadPath = "C:\temp"
 mkdir $downloadPath
-Invoke-WebRequest  Invoke-WebRequest https://live.sysinternals.com/tools/PsExec64.exe -OutFile $downloadPath\PsExec64.exe
-Invoke-WebRequest  Invoke-WebRequest https://raw.githubusercontent.com/tomaszchrulski/win10-kiosk-mode/main/Website-Shortcuts.txt -OutFile $downloadPath\Website-Shortcuts.txt
+Invoke-WebRequest https://live.sysinternals.com/tools/PsExec64.exe -OutFile $downloadPath\PsExec64.exe
+Invoke-WebRequest https://raw.githubusercontent.com/tomaszchrulski/win10-kiosk-mode/main/Website-Shortcuts.txt -OutFile $downloadPath\Website-Shortcuts.txt
     
     #This script generates shortcuts based on the content of the file ".\Website-Shortcuts.txt" within the same directory.
 
