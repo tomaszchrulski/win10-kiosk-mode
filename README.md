@@ -17,3 +17,15 @@ then those shortcuts need to be referenced in the "Public Libraries Kiosk Setup"
 remove-item $env:userprofile\Downloads* -Confirm:$false
 remove-item $env:userprofile\Documents* -Confirm:$false
 remove-item $env:userprofile\Desktop* -Confirm:$false
+
+
+The rough run of the script should be as follows:
+1. Run Powershell as admin.
+2. Download PsExec64.exe (also within the same repository)
+3. Run Powershell script directly from Github that will:
+    a). Start the Powershell as the "system" user (psexec64.exe -i -s powershell.exe)
+    b). Run Functions:
+        - Generate Website-Shortcuts based on the Website-Shortcuts.txt file.
+        - Generate Kiosk and the autosign-in user based on the location
+        - Create scheduled task to run at 16:30 everyday that will send http POST request to the ntfy.sh/<ID>
+            - Scheduled task is to count the successful logins for a <USERNAME> and send notification.

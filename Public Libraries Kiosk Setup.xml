@@ -53,7 +53,7 @@ $assignedAccessConfiguration = @"
                                 <start:DesktopApplicationTile Size="2x2" Column="4" Row="4" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Google Chrome.lnk" />
                                 <start:Tile Size="2x2" Column="0" Row="2" AppUserModelID="Microsoft.BingWeather_8wekyb3d8bbwe!App"/>
                                 <start:DesktopApplicationTile Size="2x2" Column="2" Row="2" DesktopApplicationID="com.squirrel.Teams.Teams"/>
-                                <start:DesktopApplicationTile Size="2x2" Column="6" Row="2" DesktopApplicationID="{6D809377-6AF0-444B-8957-A3773F02200E}\Windows NT\Accessories\wordpad.exe"/>
+                                <start:DesktopApplicationTile Size="2x2" Column="6" Row="2" DesktopApplicationID="%ProgramFiles(x86)%\Adobe\Acrobat Reader DC\Reader\AcroRd32.exe"/>
                                 <start:Tile Size="2x2" Column="6" Row="4" AppUserModelID="Microsoft.ScreenSketch_8wekyb3d8bbwe!App"/>
                             </start:Group>
                             <start:Group Name="">
@@ -63,9 +63,9 @@ $assignedAccessConfiguration = @"
                                 <start:Tile Size="2x2" Column="6" Row="0" AppUserModelID="Microsoft.SkypeApp_kzf8qxf38zg5c!App"/>
                                 <start:Tile Size="2x2" Column="2" Row="0" AppUserModelID="Microsoft.MSPaint_8wekyb3d8bbwe!Microsoft.MSPaint"/>
                                 <start:DesktopApplicationTile Size="2x2" Column="0" Row="4" DesktopApplicationID="Microsoft.Office.ONENOTE.EXE.15"/>
-                                <start:DesktopApplicationTile Size="2x2" Column="0" Row="2" DesktopApplicationID="{7C5A40EF-A0FB-4BFC-874A-C0F2E0B9FA8E}\Adobe\Acrobat Reader DC\Reader\AcroRd32.exe"/>
+                                <start:DesktopApplicationTile Size="2x2" Column="0" Row="2" DesktopApplicationID="%ProgramFiles(x86)%\Adobe\Acrobat Reader DC\Reader\AcroRd32.exe"/>
                                 <start:Tile Size="2x2" Column="2" Row="2" AppUserModelID="Microsoft.MicrosoftStickyNotes_8wekyb3d8bbwe!App"/>
-                                <start:DesktopApplicationTile Size="2x2" Column="4" Row="2" DesktopApplicationID="{1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\mspaint.exe"/>
+                                <start:DesktopApplicationTile Size="2x2" Column="4" Row="2" DesktopApplicationID="%windir%\system32\mspaint.exe"/>
                                 <start:Tile Size="2x2" Column="6" Row="2" AppUserModelID="microsoft.windowscommunicationsapps_8wekyb3d8bbwe!microsoft.windowslive.calendar"/>
                             </start:Group>
 							<start:Group>
