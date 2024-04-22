@@ -1,5 +1,3 @@
-function createKiosk {
-
 $assignedAccessConfiguration = @"
 <?xml version="1.0" encoding="utf-8"?>
 <AssignedAccessConfiguration xmlns="http://schemas.microsoft.com/AssignedAccess/2017/config" xmlns:rs5="http://schemas.microsoft.com/AssignedAccess/201810/config" xmlns:v3="http://schemas.microsoft.com/AssignedAccess/2020/config">
@@ -102,7 +100,3 @@ $obj = Get-CimInstance -Namespace $namespaceName -ClassName $className
 $obj.Configuration = [System.Net.WebUtility]::HtmlEncode($assignedAccessConfiguration)
 Set-CimInstance -CimInstance $obj
 
-}
-
-
-createKiosk 

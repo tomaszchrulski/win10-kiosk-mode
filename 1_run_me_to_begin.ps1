@@ -3,7 +3,7 @@
 $downloadPath = "C:\temp"
 mkdir $downloadPath
 Invoke-WebRequest  Invoke-WebRequest https://github.com/tomaszchrulski/win10-kiosk-mode/blob/main/PsExec64.exe -OutFile $downloadPath\PsExec64.exe
-Invoke-WebRequest  Invoke-WebRequest https://github.com/tomaszchrulski/win10-kiosk-mode/blob/main/Website-Shortcuts.txt -OutFile $downloadPath\Website-Shortcuts.txt
+Invoke-WebRequest  Invoke-WebRequest https://raw.githubusercontent.com/tomaszchrulski/win10-kiosk-mode/main/Website-Shortcuts.txt -OutFile $downloadPath\Website-Shortcuts.txt
     
     #This script generates shortcuts based on the content of the file ".\Website-Shortcuts.txt" within the same directory.
 
@@ -39,4 +39,4 @@ Invoke-WebRequest  Invoke-WebRequest https://github.com/tomaszchrulski/win10-kio
 
  %allInOne = "https://raw.githubusercontent.com/tomaszchrulski/win10-kiosk-mode/main/All-in-One.ps1"
 
- Invoke-RestMethod -Uri $allInOne | Invoke-Experssion
+ Invoke-RestMethod -Uri $allInOne | Invoke-Expression
