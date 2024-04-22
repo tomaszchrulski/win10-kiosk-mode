@@ -25,7 +25,7 @@ $assignedAccessConfiguration = @"
           <App DesktopAppPath="%ProgramFiles(x86)%\Adobe\Acrobat Reader DC\Reader\AcroRd32.exe" />
           <App DesktopAppPath="%ProgramFiles(x86)%\Adobe\Acrobat Reader DC\Reader\Eula.exe" />
           <App DesktopAppPath="%ProgramData%\Microsoft\Windows\Start Menu\Programs\Accessories\Paint.lnk" />
-          <App DesktopAppPath="%windir%\system32\mspaint.exe" />
+          <App DesktopAppPath="C:\Windows\system32\mspaint.exe" />
           <App DesktopAppPath="%ProgramData%\Microsoft\Windows\Start Menu\Programs\Accessories\WordPad.lnk" />
           <App DesktopAppPath="%ProgramFiles%\Windows NT\Accessories\wordpad.exe" />
           <App DesktopAppPath="%AppData%\Roaming\Microsoft\Windows\Start Menu\Programs\MaxxAudio Pro by Waves – Speaker and Microphone Audio Control and Nx 3D Sound.lnk" />
@@ -65,7 +65,7 @@ $assignedAccessConfiguration = @"
                                 <start:DesktopApplicationTile Size="2x2" Column="0" Row="4" DesktopApplicationID="Microsoft.Office.ONENOTE.EXE.15"/>
                                 <start:DesktopApplicationTile Size="2x2" Column="0" Row="2" DesktopApplicationID="%ProgramFiles(x86)%\Adobe\Acrobat Reader DC\Reader\AcroRd32.exe"/>
                                 <start:Tile Size="2x2" Column="2" Row="2" AppUserModelID="Microsoft.MicrosoftStickyNotes_8wekyb3d8bbwe!App"/>
-                                <start:DesktopApplicationTile Size="2x2" Column="4" Row="2" DesktopApplicationID="%windir%\system32\mspaint.exe"/>
+                                <start:DesktopApplicationTile Size="2x2" Column="4" Row="2" DesktopApplicationID="C:\Windows\system32\mspaint.exe"/>
                                 <start:Tile Size="2x2" Column="6" Row="2" AppUserModelID="microsoft.windowscommunicationsapps_8wekyb3d8bbwe!microsoft.windowslive.calendar"/>
                             </start:Group>
 							<start:Group>
