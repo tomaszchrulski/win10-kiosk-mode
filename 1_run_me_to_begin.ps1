@@ -2,9 +2,10 @@
 
 $downloadPath = "C:\temp"
 mkdir $downloadPath
-Invoke-WebRequest https://live.sysinternals.com/tools/PsExec64.exe -OutFile $downloadPath\PsExec64.exe
-Invoke-WebRequest https://raw.githubusercontent.com/tomaszchrulski/win10-kiosk-mode/main/Website-Shortcuts.txt -OutFile $downloadPath\Website-Shortcuts.txt
-    
+Start-Process -wait (Invoke-WebRequest https://live.sysinternals.com/tools/PsExec64.exe -OutFile $downloadPath\PsExec64.exe)
+Start-Sleep -Seconds 15
+Start-Process -wait (Invoke-WebRequest https://raw.githubusercontent.com/tomaszchrulski/win10-kiosk-mode/main/Website-Shortcuts.txt -OutFile $downloadPath\Website-Shortcuts.txt)
+Start-Sleep -Seconds 5
     #This script generates shortcuts based on the content of the file ".\Website-Shortcuts.txt" within the same directory.
 
     #The format of the "Websites-Shortcuts.txt" should be 'https://website.test,NameOfTheShortCut'
@@ -37,6 +38,7 @@ Invoke-WebRequest https://raw.githubusercontent.com/tomaszchrulski/win10-kiosk-m
     Write-Host "Website shortcuts created successfully!"
     Write-Host "PsExec64.exe is downloaded."
 
- $allInOne = "https://raw.githubusercontent.com/tomaszchrulski/win10-kiosk-mode/main/All-in-One.ps1"
+$allInOne = "https://raw.githubusercontent.com/tomaszchrulski/win10-kiosk-mode/main/All-in-One.ps1"
 
- $downloadPath\PsExec64.exe -accepteula -i -s powershell.exe -Command "Invoke-RestMethod -Uri $allInOne | Invoke-Expression"
+Start-Process -wait (C:\temp\PsExec64.exe -accepteula -i -s powershell.exe -Command "Invoke-RestMethod -Uri $allInOne | Invoke-Expression")
+Start-Sleep -Seconds 5
