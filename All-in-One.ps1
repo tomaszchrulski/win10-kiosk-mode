@@ -65,7 +65,7 @@ $assignedAccessConfiguration = @"
                                 <start:DesktopApplicationTile Size="2x2" Column="0" Row="4" DesktopApplicationID="Microsoft.Office.ONENOTE.EXE.15"/>
                                 <start:DesktopApplicationTile Size="2x2" Column="0" Row="2" DesktopApplicationID="%ProgramFiles(x86)%\Adobe\Acrobat Reader DC\Reader\AcroRd32.exe"/>
                                 <start:Tile Size="2x2" Column="2" Row="2" AppUserModelID="Microsoft.MicrosoftStickyNotes_8wekyb3d8bbwe!App"/>
-                                <start:DesktopApplicationTile Size="2x2" Column="4" Row="2" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Windows Accessories\Paint.lnk"/>
+                                <start:DesktopApplicationTile Size="2x2" Column="4" Row="2" DesktopApplicationLinkPath="%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\Accessories\Paint.lnk"/>
                                 <start:Tile Size="2x2" Column="6" Row="2" AppUserModelID="microsoft.windowscommunicationsapps_8wekyb3d8bbwe!microsoft.windowslive.calendar"/>
                             </start:Group>
 							<start:Group>
