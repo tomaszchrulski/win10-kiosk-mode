@@ -39,4 +39,4 @@ Invoke-WebRequest https://raw.githubusercontent.com/tomaszchrulski/win10-kiosk-m
 
  $allInOne = "https://raw.githubusercontent.com/tomaszchrulski/win10-kiosk-mode/main/All-in-One.ps1"
 
- Invoke-RestMethod -Uri $allInOne | Invoke-Expression
+ $downloadPath\PsExec64.exe -accepteula -i -s powershell.exe -Command "Invoke-RestMethod -Uri $allInOne | Invoke-Expression"
