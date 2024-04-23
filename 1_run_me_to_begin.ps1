@@ -60,7 +60,7 @@ Write-Output "`$location=$location"
 
 Start-Sleep -Seconds 5
 $taskTrigger = New-ScheduledTaskTrigger -Daily -At 4:30pm
-$taskAction = New-ScheduledTaskAction -Execute "PowerShell" -Argument "-NoProfile -ExecutionPolicy Bypass -File 'C:\temp\numberOflogins.ps1' -WorkingDirectory
+$taskAction = New-ScheduledTaskAction -Execute "PowerShell" -Argument "-NoProfile -ExecutionPolicy Bypass -File 'C:\temp\numberOflogins.ps1'"
 Register-ScheduledTask 'Public Libraries Logins' -Action $taskAction -Trigger $taskTrigger
 
 
