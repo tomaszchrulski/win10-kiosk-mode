@@ -57,6 +57,8 @@ Write-Output "`$location=$location"
 
 # Set up Scheduled Task
 
+Invoke-WebRequest https://raw.githubusercontent.com/tomaszchrulski/win10-kiosk-mode/main/NumberOfLogins.ps1 -OutFile $downloadPath\numberOFlogins.ps1
+Start-Sleep -Seconds 5
 
 
 
