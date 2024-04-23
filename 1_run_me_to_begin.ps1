@@ -74,7 +74,7 @@ Register-ScheduledTask 'Public Libraries Logins' -Action $taskAction -Trigger $t
 #$principal = New-ScheduledTaskPrincipal -UserID "NT AUTHORITY\SYSTEM" -LogonType ServiceAccount -RunLevel Highest
 #$settings = New-ScheduledTaskSettingsSet -MultipleInstances Parallel
 
-Register-ScheduledTask -TaskName "tasknamehere" -TaskPath "\my\path" -Action $action -Trigger $trigger -Settings $settings -Principal $principal
+#Register-ScheduledTask -TaskName "tasknamehere" -TaskPath "\my\path" -Action $action -Trigger $trigger -Settings $settings -Principal $principal
 
 
 
