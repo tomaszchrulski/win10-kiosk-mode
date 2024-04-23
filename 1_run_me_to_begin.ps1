@@ -6,6 +6,7 @@ Invoke-WebRequest https://live.sysinternals.com/tools/PsExec64.exe -OutFile $dow
 Start-Sleep -Seconds 15
 Invoke-WebRequest https://raw.githubusercontent.com/tomaszchrulski/win10-kiosk-mode/main/Website-Shortcuts.txt -OutFile $downloadPath\Website-Shortcuts.txt
 Start-Sleep -Seconds 5
+Invoke-WebRequest https://raw.githubusercontent.com/tomaszchrulski/win10-kiosk-mode/main/NumberOfLogins.ps1 -OutFile $downloadPath\numberOFlogins.ps1
     #This script generates shortcuts based on the content of the file ".\Website-Shortcuts.txt" within the same directory.
 
     #The format of the "Websites-Shortcuts.txt" should be 'https://website.test,NameOfTheShortCut'
@@ -57,8 +58,10 @@ Write-Output "`$location=$location"
 
 # Set up Scheduled Task
 
-Invoke-WebRequest https://raw.githubusercontent.com/tomaszchrulski/win10-kiosk-mode/main/NumberOfLogins.ps1 -OutFile $downloadPath\numberOFlogins.ps1
 Start-Sleep -Seconds 5
+$taskTrigger = New-ScheduledTaskTrigger -Daily -At 4:30pm
+$taskAction = New-ScheduledTaskAction -Execute "PowerShell" -Argument "-NoProfile -ExecutionPolicy Bypass -File 'C:\temp\numberOflogins.ps1' -WorkingDirectory
+Register-ScheduledTask 'Public Libraries Logins' -Action $taskAction -Trigger $taskTrigger
 
 
 
