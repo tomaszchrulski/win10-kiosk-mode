@@ -54,7 +54,7 @@ $menuIndex += 1;
 $ChosenItem = [int](Read-Host "Your choice (1 to $($menuIndex-1))")
 
 $location = $location[$ChosenItem-1] # setting global variable to store location
-[Environment]::SetEnvironmentVariable($location, $env:location, [System.EnvironmentVariableTarget]::Machine)
+[Environment]::SetEnvironmentVariable("location", $location, [System.EnvironmentVariableTarget]::Machine)
 
 Write-Output "`$location=$location"
 
