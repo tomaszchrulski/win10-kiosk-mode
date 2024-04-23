@@ -2,7 +2,7 @@ $assignedAccessConfiguration = @"
 <?xml version="1.0" encoding="utf-8"?>
 <AssignedAccessConfiguration xmlns="http://schemas.microsoft.com/AssignedAccess/2017/config" xmlns:rs5="http://schemas.microsoft.com/AssignedAccess/201810/config" xmlns:v3="http://schemas.microsoft.com/AssignedAccess/2020/config">
   <Profiles>
-    <Profile Id="{9A2A490F-10F6-4764-974A-43B19E722C25}">
+    <Profile Id="{9A2A490F-10F6-4764-974A-43B19E722C26}">
       <AllAppsList>
         <AllowedApps>
           <App AppUserModelId="Microsoft.WindowsCalculator_8wekyb3d8bbwe!App" />
@@ -87,8 +87,8 @@ $assignedAccessConfiguration = @"
   </Profiles>
   <Configs>
     <Config>
-      <AutoLogonAccount rs5:DisplayName="MS Learn Example test2" />
-      <DefaultProfile Id="{9A2A490F-10F6-4764-974A-43B19E722C25}" />
+      <AutoLogonAccount rs5:DisplayName="KIOSK" />
+      <DefaultProfile Id="{9A2A490F-10F6-4764-974A-43B19E722C26}" />
     </Config>
   </Configs>
 </AssignedAccessConfiguration>

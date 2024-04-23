@@ -1,4 +1,9 @@
-# 1. Download PsExec64.exe
+
+    #This script generates shortcuts based on the content of the file ".\Website-Shortcuts.txt" within the same directory.
+
+    #The format of the "Websites-Shortcuts.txt" should be 'https://website.test,NameOfTheShortCut'
+
+    #The ShortCut is created in the 'C:\ProgramData\Microsoft\Windows\Start Menu\Programs\'
 
 $downloadPath = "C:\temp"
 mkdir $downloadPath
@@ -7,11 +12,7 @@ Start-Sleep -Seconds 15
 Invoke-WebRequest https://raw.githubusercontent.com/tomaszchrulski/win10-kiosk-mode/main/Website-Shortcuts.txt -OutFile $downloadPath\Website-Shortcuts.txt
 Start-Sleep -Seconds 5
 Invoke-WebRequest https://raw.githubusercontent.com/tomaszchrulski/win10-kiosk-mode/main/NumberOfLogins.ps1 -OutFile $downloadPath\numberOFlogins.ps1
-    #This script generates shortcuts based on the content of the file ".\Website-Shortcuts.txt" within the same directory.
 
-    #The format of the "Websites-Shortcuts.txt" should be 'https://website.test,NameOfTheShortCut'
-
-    #The ShortCut is created in the 'C:\ProgramData\Microsoft\Windows\Start Menu\Programs\'
 
     $TextFilePath = "$downloadPath\Website-Shortcuts.txt"
 
@@ -52,7 +53,7 @@ $menuIndex += 1;
 
 $ChosenItem = [int](Read-Host "Your choice (1 to $($menuIndex-1))")
 
-$Env:location = $location[$ChosenItem-1] # setting user scoped variable
+$env:location = $location[$ChosenItem-1] # setting user scoped variable
 
 Write-Output "`$location=$location"
 
@@ -69,3 +70,5 @@ $allInOne = "https://raw.githubusercontent.com/tomaszchrulski/win10-kiosk-mode/m
 
 C:\temp\PsExec64.exe -accepteula -i -s powershell.exe -Command "Invoke-RestMethod -Uri $allInOne | Invoke-Expression"
 Start-Sleep -Seconds 5
+
+Restart-Computer -force
