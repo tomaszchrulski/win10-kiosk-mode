@@ -15,7 +15,7 @@ $message = $numberOflogins.Count
 
 $DateSince = (Get-Date).AddDays(-1)
 $hostname = hostname
-$whoami = whoami
-$msg = Write-Output "The Account" $whoami "has logged in" $message "times since" $DateSince "at" $env:location "Library."
+$whoami = "kioskUser0"
+$msg = Write-Output "The Account" $hostname\$whoami "has logged in" $message "times since" $DateSince "at" $env:location "Library."
 
 Invoke-WebRequest -Uri "https://ntfy.sh/mytestingtopic_012345" -Method POST -Body $msg
