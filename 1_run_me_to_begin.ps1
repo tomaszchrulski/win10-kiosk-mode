@@ -52,7 +52,7 @@ $menuIndex += 1;
 
 $ChosenItem = [int](Read-Host "Your choice (1 to $($menuIndex-1))")
 
-$location = $location[$ChosenItem-1]
+$Env:location = $location[$ChosenItem-1] # setting user scoped variable
 
 Write-Output "`$location=$location"
 
