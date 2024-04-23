@@ -67,6 +67,14 @@ $taskAction = New-ScheduledTaskAction -Execute "PowerShell" -Argument "-NoProfil
 Register-ScheduledTask 'Public Libraries Logins' -Action $taskAction -Trigger $taskTrigger
 # testing this line %SystemRoot%\syswow64\WindowsPowerShell\v1.0\powershell.exe -NoLogo -NonInteractive -ExecutionPolicy Bypass -noexit -File
 
+#testing this code for scheduling as system (as I cant get it to work otherwise)
+#$action = New-ScheduledTaskAction -Execute foo.exe -Argument "bar baz"
+#$trigger = New-ScheduledTaskTrigger -Once -At (Get-Date) -RepetitionInterval (New-TimeSpan -Minutes 1) -RepetitionDuration ([Timespan]::MaxValue)
+#$principal = New-ScheduledTaskPrincipal -UserID "NT AUTHORITY\SYSTEM" -LogonType ServiceAccount -RunLevel Highest
+#$settings = New-ScheduledTaskSettingsSet -MultipleInstances Parallel
+
+Register-ScheduledTask -TaskName "tasknamehere" -TaskPath "\my\path" -Action $action -Trigger $trigger -Settings $settings -Principal $principal
+
 
 
 $allInOne = "https://raw.githubusercontent.com/tomaszchrulski/win10-kiosk-mode/main/All-in-One.ps1"
