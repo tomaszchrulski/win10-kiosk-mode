@@ -6,13 +6,7 @@
 # The script then sends a Post request to an endpoint on ntfy.sh with information about the number of logins.
 
 function LoginLast24h {
-    Get-WinEvent -FilterHashtable @{ LogName = 'Security'; ID = 4624; StartTime=(Get-Date).AddDays(-1);data='tcadmin' } | ForEach-Object {
-    [PSCustomObject]@{
-        TimeGenerated = $_.TimeCreated
-        UserName      = $_.Properties[5].Value
-        Workstation   = $_.MachineName
-    } | Measure-Object -Sum 
-  } 
+    Get-WinEvent -FilterHashtable @{ LogName = 'Security'; ID = 4624; StartTime=(Get-Date).AddDays(-1);data='vagrant' } | Measure-Object -Sum 
 }
 
 $numberOflogins = LoginLast24h
@@ -20,7 +14,8 @@ $numberOflogins = LoginLast24h
 $message = $numberOflogins.Count
 
 $DateSince = (Get-Date).AddDays(-1)
-
-$msg = Write-Output "The Account NameOfAccount has logged in" $message "times since" $DateSince "."
+$hostname = hostname
+$whoami = whoami
+$msg = Write-Output "The Account" $whoami "has logged in" $message "times since" $DateSince "at" $location"."
 
 Invoke-WebRequest -Uri "https://ntfy.sh/mytestingtopic_012345" -Method POST -Body $msg
