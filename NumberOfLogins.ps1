@@ -6,7 +6,7 @@
 # The script then sends a Post request to an endpoint on ntfy.sh with information about the number of logins.
 
 function LoginLast24h {
-    Get-WinEvent -FilterHashtable @{ LogName = 'Security'; ID = 4624; StartTime=(Get-Date).AddDays(-1);data='KIOSK' } | Measure-Object
+    Get-WinEvent -FilterHashtable @{ LogName = 'Security'; ID = 4624; StartTime=(Get-Date).AddDays(-1);data='kioskUser0' } | Measure-Object
 }
 
 $numberOflogins = LoginLast24h
