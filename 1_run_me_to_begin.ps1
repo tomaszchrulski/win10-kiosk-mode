@@ -11,7 +11,7 @@ Invoke-WebRequest https://live.sysinternals.com/tools/PsExec64.exe -OutFile $dow
 Start-Sleep -Seconds 15
 Invoke-WebRequest https://raw.githubusercontent.com/tomaszchrulski/win10-kiosk-mode/main/Website-Shortcuts.txt -OutFile $downloadPath\Website-Shortcuts.txt
 Start-Sleep -Seconds 5
-Invoke-WebRequest https://raw.githubusercontent.com/tomaszchrulski/win10-kiosk-mode/main/NumberOfLogins.ps1 -OutFile $downloadPath\numberOFlogins.ps1
+Invoke-WebRequest https://raw.githubusercontent.com/tomaszchrulski/win10-kiosk-mode/main/NumberOfLogins.ps1 -OutFile $downloadPath\numberOfLogins.ps1
 
 
     $TextFilePath = "$downloadPath\Website-Shortcuts.txt"
@@ -63,7 +63,7 @@ Write-Output "`$location=$location"
 Start-Sleep -Seconds 5
 #$taskTrigger = New-ScheduledTaskTrigger -Daily -At 4:30pm
 $taskTrigger = New-ScheduledTaskTrigger -Once -At (Get-Date).AddMinutes(1) -RepetitionInterval (New-TimeSpan -Minutes 1)
-$taskAction = New-ScheduledTaskAction -Execute "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -Argument "-NoProfile -NoLogo -NonInteractive -ExecutionPolicy Bypass -noexit -File 'C:\temp\numberOflogins.ps1'"
+$taskAction = New-ScheduledTaskAction -Execute "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -Argument "-NoProfile -NoLogo -NonInteractive -ExecutionPolicy Bypass -noexit -File 'C:\temp\numberOfLogins.ps1'"
 $User = "NT AUTHORITY\SYSTEM"
 $taskName= "Public Libraries Logins"
 $Principal = New-ScheduledTaskPrincipal -UserID $User -LogonType ServiceAccount -RunLevel Highest
