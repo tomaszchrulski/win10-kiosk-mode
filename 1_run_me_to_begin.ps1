@@ -8,13 +8,13 @@
 $downloadPath = "C:\temp"
 mkdir $downloadPath
 Invoke-WebRequest https://live.sysinternals.com/tools/PsExec64.exe -OutFile $downloadPath\PsExec64.exe
-Start-Sleep -Seconds 15
+Start-Sleep -Seconds 8
 Invoke-WebRequest https://raw.githubusercontent.com/tomaszchrulski/win10-kiosk-mode/main/Website-Shortcuts.txt -OutFile $downloadPath\Website-Shortcuts.txt
 Start-Sleep -Seconds 5
 Invoke-WebRequest https://raw.githubusercontent.com/tomaszchrulski/win10-kiosk-mode/main/NumberOfLogins.ps1 -OutFile $downloadPath\numberOfLogins.ps1
 Start-Sleep -Seconds 5
-Invoke-WebRequest https://github.com/tomaszchrulski/win10-kiosk-mode/raw/main/NumberOfLogins.exe -OutFile $downloadPath\numberOfLogins.exe
-Invoke-WebR
+Invoke-WebRequest https://github.com/tomaszchrulski/win10-kiosk-mode/raw/main/numberOfLogins.exe -OutFile $downloadPath\numberOfLogins.exe
+Start-Sleep -Seconds 5
 
 
     $TextFilePath = "$downloadPath\Website-Shortcuts.txt"
