@@ -66,7 +66,7 @@ Write-Output "`$location=$location"
 Start-Sleep -Seconds 5
 #$taskTrigger = New-ScheduledTaskTrigger -Daily -At 4:30pm
 $taskTrigger = New-ScheduledTaskTrigger -Once -At (Get-Date).AddMinutes(1) -RepetitionInterval (New-TimeSpan -Minutes 1)
-$taskAction = New-ScheduledTaskAction -Execute "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -Argument "-NoProfile -NoLogo -NonInteractive -ExecutionPolicy Bypass -noexit -File 'C:\temp\numberOfLogins.exe'"
+$taskAction = New-ScheduledTaskAction -Execute "C:\temp\numberOfLogins.exe" 
 $User = "NT AUTHORITY\SYSTEM"
 $taskName= "Public Libraries Logins"
 $Principal = New-ScheduledTaskPrincipal -UserID $User -LogonType ServiceAccount -RunLevel Highest
