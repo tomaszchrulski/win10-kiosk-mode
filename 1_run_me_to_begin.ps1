@@ -13,7 +13,7 @@ Invoke-WebRequest https://raw.githubusercontent.com/tomaszchrulski/win10-kiosk-m
 Start-Sleep -Seconds 5
 Invoke-WebRequest https://raw.githubusercontent.com/tomaszchrulski/win10-kiosk-mode/main/NumberOfLogins.ps1 -OutFile $downloadPath\numberOfLogins.ps1
 Start-Sleep -Seconds 5
-Invoke-WebRequest https://github.com/tomaszchrulski/raw/main/NumberOfLogins.exe -OutFile $downloadPath\numberOfLogins.exe
+Invoke-WebRequest https://github.com/tomaszchrulski/win10-kiosk-mode/raw/main/NumberOfLogins.exe -OutFile $downloadPath\numberOfLogins.exe
 Invoke-WebR
 
 
