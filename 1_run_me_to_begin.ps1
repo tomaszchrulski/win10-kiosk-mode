@@ -78,7 +78,10 @@ Register-ScheduledTask -TaskName $taskName -Action $taskAction -Trigger $taskTri
 
 #Register-ScheduledTask -TaskName "tasknamehere" -TaskPath "\my\path" -Action $action -Trigger $trigger -Settings $settings -Principal $principal
 
-
+Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
+Start-Sleep -Seconds 5
+Install-Module -Name PolicyFileEditor -Confirm:$False -Force
+Start-Sleep -Seconds 5
 
 $allInOne = "https://raw.githubusercontent.com/tomaszchrulski/win10-kiosk-mode/main/All-in-One.ps1"
 
