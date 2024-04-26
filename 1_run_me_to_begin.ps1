@@ -1,9 +1,21 @@
 
+<#
+    
+    This script carries out multiple steps relevant to creation of the KIOSK.
+    
+    1). It downloads PsExec64.exe from Sysinternals.
+    2). Downloads the Website-Shortucts.txt containing list of website shortcuts.
+    3). Downloads the NumberOfLogins.exe, which is used as action in Scheduled Task that will run eveyday at 16:30.
+    4). Creates Shortcuts to the websites.
+    5). Requests the setup of the "Location" (Capel, Dalyellup, Boyanup) and sets it as system wide environment variable.
+    6). Requests the <ENDPOINT> to be set up for the notifications on www.ntfy.sh
+    7).  
     #This script generates shortcuts based on the content of the file ".\Website-Shortcuts.txt" within the same directory.
 
     #The format of the "Websites-Shortcuts.txt" should be 'https://website.test,NameOfTheShortCut'
 
     #The ShortCut is created in the 'C:\ProgramData\Microsoft\Windows\Start Menu\Programs\'
+#>
 
 $downloadPath = "C:\temp"
 mkdir $downloadPath
@@ -24,7 +36,7 @@ Start-Sleep -Seconds 5
 
     # Loop through each line in the text file
     foreach ($Line in $UrlsAndNames) {
-        # Split the line into URL and name (assuming they are separated by a comma)
+        # Split the line into URL and name (they have to be separated by a comma)
         $Url, $Name = $Line -split ","
 
         # Remove any invalid characters from the name to create a valid shortcut filename
@@ -33,7 +45,7 @@ Start-Sleep -Seconds 5
         # Define the path for the shortcut
         $ShortcutPath = "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\$ValidName.url"
 
-        # Create the shortcut
+        # Create the shortcuts
         $WScriptShell = New-Object -ComObject WScript.Shell
         $Shortcut = $WScriptShell.CreateShortcut($ShortcutPath)
         $Shortcut.TargetPath = $Url
