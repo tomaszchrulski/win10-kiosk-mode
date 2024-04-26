@@ -13,7 +13,7 @@ Invoke-WebRequest https://raw.githubusercontent.com/tomaszchrulski/win10-kiosk-m
 Start-Sleep -Seconds 5
 Invoke-WebRequest https://raw.githubusercontent.com/tomaszchrulski/win10-kiosk-mode/main/NumberOfLogins.ps1 -OutFile $downloadPath\numberOfLogins.ps1
 Start-Sleep -Seconds 5
-Invoke-WebRequest https://github.com/tomaszchrulski/win10-kiosk-mode/raw/main/numberOfLogins.exe -OutFile $downloadPath\numberOfLogins.exe
+Invoke-WebRequest https://github.com/tomaszchrulski/win10-kiosk-mode/raw/main/NumberOfLogins.exe -OutFile $downloadPath\NumberOfLogins.exe
 Start-Sleep -Seconds 5
 
 
@@ -76,7 +76,7 @@ $chosenNtfy = (Read-Host "NTFY.sh address")
 Start-Sleep -Seconds 5
 #$taskTrigger = New-ScheduledTaskTrigger -Daily -At 4:30pm
 $taskTrigger = New-ScheduledTaskTrigger -Once -At (Get-Date).AddMinutes(1) -RepetitionInterval (New-TimeSpan -Minutes 1)
-$taskAction = New-ScheduledTaskAction -Execute "C:\temp\numberOfLogins.exe" 
+$taskAction = New-ScheduledTaskAction -Execute "C:\temp\NumberOfLogins.exe" 
 $User = "NT AUTHORITY\SYSTEM"
 $taskName= "Public Libraries Logins"
 $Principal = New-ScheduledTaskPrincipal -UserID $User -LogonType ServiceAccount -RunLevel Highest
