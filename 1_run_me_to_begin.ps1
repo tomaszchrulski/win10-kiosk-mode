@@ -63,6 +63,7 @@ Write-Output "`$location=$location"
 
 # Set up a system variable to store the URL of the endpoint (ntfy.sh/<ENDPOINT>)
 
+Write-Host "..."
 Write-Host "Provide a custom ENDPOINT in the format https://ntfy.sh/<ENDPOINT>"
 Write-Host "For example: https://ntfy.sh/arisoenar234i2e3n4i23e"
 Write-Host "This is used to receive notification from each workstation"
