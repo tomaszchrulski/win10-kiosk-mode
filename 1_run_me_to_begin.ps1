@@ -61,6 +61,16 @@ $location = $location[$ChosenItem-1] # setting global variable to store location
 
 Write-Output "`$location=$location"
 
+# Set up a system variable to store the URL of the endpoint (ntfy.sh/<ENDPOINT>)
+
+Write-Host "Provide a custom ENDPOINT in the format https://ntfy.sh/<ENDPOINT>"
+Write-Host "For example: https://ntfy.sh/arisoenar234i2e3n4i23e"
+Write-Host "This is used to receive notification from each workstation"
+
+$chosenNtfy = (Read-Host "NTFY.sh address")
+[Environment]::SetEnvironmentVariable("chosenNtfy", $chosenNtfy, [System.EnvironmentVariableTarget]::Machine)
+
+
 # Set up Scheduled Task
 
 Start-Sleep -Seconds 5
@@ -71,16 +81,8 @@ $User = "NT AUTHORITY\SYSTEM"
 $taskName= "Public Libraries Logins"
 $Principal = New-ScheduledTaskPrincipal -UserID $User -LogonType ServiceAccount -RunLevel Highest
 Register-ScheduledTask -TaskName $taskName -Action $taskAction -Trigger $taskTrigger -Principal $Principal
-# testing this line %SystemRoot%\syswow64\WindowsPowerShell\v1.0\powershell.exe -NoLogo -NonInteractive -ExecutionPolicy Bypass -noexit -File
 
-#testing this code for scheduling as system (as I cant get it to work otherwise)
-#$action = New-ScheduledTaskAction -Execute foo.exe -Argument "bar baz"
-#$trigger = New-ScheduledTaskTrigger -Once -At (Get-Date) -RepetitionInterval (New-TimeSpan -Minutes 1) -RepetitionDuration ([Timespan]::MaxValue)
-#$principal = New-ScheduledTaskPrincipal -UserID "NT AUTHORITY\SYSTEM" -LogonType ServiceAccount -RunLevel Highest
-#$settings = New-ScheduledTaskSettingsSet -MultipleInstances Parallel
-
-#Register-ScheduledTask -TaskName "tasknamehere" -TaskPath "\my\path" -Action $action -Trigger $trigger -Settings $settings -Principal $principal
-
+# Installing Nuget and PoliciFileEditor to edit Local Security Group Policy
 Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
 Start-Sleep -Seconds 5
 Install-Module -Name PolicyFileEditor -Confirm:$False -Force
