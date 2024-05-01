@@ -106,4 +106,7 @@ $allInOne = "https://raw.githubusercontent.com/tomaszchrulski/win10-kiosk-mode/m
 C:\temp\PsExec64.exe -accepteula -i -s powershell.exe -Command "Invoke-RestMethod -Uri $allInOne | Invoke-Expression"
 Start-Sleep -Seconds 5
 
+#Set password for the user
+Set-LocalUser -Name "kioskUser0" -Password "Public"
+
 Restart-Computer -force
