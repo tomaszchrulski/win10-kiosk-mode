@@ -96,10 +96,10 @@ $Principal = New-ScheduledTaskPrincipal -UserID $User -LogonType ServiceAccount 
 Register-ScheduledTask -TaskName $taskName -Action $taskAction -Trigger $taskTrigger -Principal $Principal
 
 # Installing Nuget and PoliciFileEditor to edit Local Security Group Policy
-Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
-Start-Sleep -Seconds 5
-Install-Module -Name PolicyFileEditor -Confirm:$False -Force
-Start-Sleep -Seconds 5
+# Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
+# Start-Sleep -Seconds 5
+# Install-Module -Name PolicyFileEditor -Confirm:$False -Force
+# Start-Sleep -Seconds 5
 
 $allInOne = "https://raw.githubusercontent.com/tomaszchrulski/win10-kiosk-mode/main/All-in-One.ps1"
 
