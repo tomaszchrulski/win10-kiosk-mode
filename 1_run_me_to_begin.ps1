@@ -107,6 +107,6 @@ C:\temp\PsExec64.exe -accepteula -i -s powershell.exe -Command "Invoke-RestMetho
 Start-Sleep -Seconds 5
 
 #Set password for the user
-Set-LocalUser -Name "kioskUser0" -Password "Public"
+net user kioskUser0 Public
 
 Restart-Computer -force
