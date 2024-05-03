@@ -1,5 +1,5 @@
 https://slwa.wa.gov.au/,State Libraries WA
-https://ancestrylibrary.com.au/,Ancestry Library
+https://ancestrylibrary.proquest.com/?token=6AKWDYC7T8KCY48X,Ancestry Library
 https://trove.nla.gov.au/,Trove
 https://readingeggs.com.au/,Reading Eggs
 https://mathletics.com/au/,Mathletics
